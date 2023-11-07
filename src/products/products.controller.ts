@@ -5,7 +5,7 @@ import {
   Post,
   Delete,
   Body,
-  Patch,
+  Put,
 } from '@nestjs/common';
 
 import { ProductsService } from './products.service';
@@ -34,7 +34,7 @@ export class ProductsController {
     return this.productsService.create(createProductDto);
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(
     @Param('id') id: string,
     @Body() updateProductDto: UpdateProductDto,
